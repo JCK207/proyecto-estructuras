@@ -17,7 +17,7 @@ public class Principal {
             System.out.println("1. Crear Tarea");
             System.out.println("2. Ver Tareas");
             System.out.println("3. Ver Tareas Completas");
-            System.out.println("3. Salir");
+            System.out.println("4. Salir");
             System.out.print("Selección: ");
             opcion = sc.nextInt();
             System.out.println();
@@ -33,10 +33,11 @@ public class Principal {
     }
     
     static void crearTarea() {
-        System.out.println("Descripcion de la tarea:");
+        System.out.print("Descripcion de la tarea:");
         String descripcion = sc.next();
-        System.out.println("Fecha a entregar: ");
+        System.out.print("Fecha a entregar: ");
         int fecha = sc.nextInt();
+        sc.nextLine();
         Tarea tareita = new Tarea(descripcion,fecha);
         tareas.add(tareita);
     }
@@ -46,11 +47,31 @@ public class Principal {
     }
     
     static void verTareasCompletas() {
-        
+        /*if (tareasCompletas.isEmpty()) {
+            System.out.println("No hay tareas completadas.");
+            return;
+        }*/
+        System.out.println("Selecciona una opción: ");
+        System.out.println("1. Desmarcar tarea como completa");
+        System.out.println("2. Eliminar tarea");
+        System.out.println("3. Volver al menú principal");
+        int opcion = sc.nextInt();
+        sc.nextLine();
+        switch(opcion){
+            case 1 -> desmarcarTarea();
+            case 2 -> eliminarTarea();
+            case 3 -> System.out.println("Volviendo al menu principal");
+            default -> System.out.println("Selección no válida");
+        }
     }
     
     static void salir() {
         
     }
-    
+    static void desmarcarTarea(){
+        
+    }
+    static void eliminarTarea(){
+        
+    }
 }
