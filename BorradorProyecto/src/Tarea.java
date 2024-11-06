@@ -4,14 +4,14 @@ import java.util.List;
 
 public class Tarea {
 
-    String descripcion;
-    int fecha;
-    List<Tarea> subTareas;
+    private String descripcion;
+    private int fecha;
+    private List<String> subtareas;
 
-    public Tarea(String descripcion, int fecha) {
+    public Tarea(String descripcion) {
         this.descripcion = descripcion;
-        this.fecha = fecha;
-        this.subTareas = new LinkedList();
+        this.fecha = 0;
+        this.subtareas = new LinkedList();
     }
 
     public String getDescripcion() {
@@ -30,12 +30,12 @@ public class Tarea {
         this.fecha = fecha;
     }
 
-    public List getSubTareas() {
-        return subTareas;
+    public List getSubtareas() {
+        return subtareas;
     }
 
-    public void setSubTareas(List subTareas) {
-        this.subTareas = subTareas;
+    public void agregarSubtarea(String subtarea) {
+        subtareas.add(descripcion);
     }
 
 }
