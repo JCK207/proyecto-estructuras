@@ -47,7 +47,8 @@ public class Principal {
     }
     
     static void verTareasCompletas() {
-        /*if (tareasCompletas.isEmpty()) {
+        int op;
+        do{/*if (tareasCompletas.isEmpty()) {
             System.out.println("No hay tareas completadas.");
             return;
         }*/
@@ -55,20 +56,23 @@ public class Principal {
         System.out.println("1. Desmarcar tarea como completa");
         System.out.println("2. Eliminar tarea");
         System.out.println("3. Volver al menú principal");
-        int opcion = sc.nextInt();
+        System.out.print("Selección: ");
+        op = sc.nextInt();
         sc.nextLine();
-        switch(opcion){
+        switch(op){
             case 1 -> desmarcarTarea();
             case 2 -> eliminarTarea();
             case 3 -> System.out.println("Volviendo al menu principal");
             default -> System.out.println("Selección no válida");
         }
+        } while (op!=3);
     }
     
     static void salir() {
         
     }
     static void desmarcarTarea(){
+        System.out.println("Hola ");
         
     }
     static void eliminarTarea(){
