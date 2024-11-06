@@ -1,10 +1,13 @@
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Principal {
     static Scanner sc;
-    
+    static List<Tarea>tareas;
     public static void main(String[] args) {
         sc = new Scanner(System.in);
+        tareas = new LinkedList();
         
         System.out.println("GESTIÓN DE TAREAS");
         
@@ -30,7 +33,12 @@ public class Principal {
     }
     
     static void crearTarea() {
-        
+        System.out.println("Descripcion de la tarea:");
+        String descripcion = sc.next();
+        System.out.println("Fecha a entregar: ");
+        int fecha = sc.nextInt();
+        Tarea tareita = new Tarea(descripcion,fecha);
+        tareas.add(tareita);
     }
     
     static void verTareas() {
